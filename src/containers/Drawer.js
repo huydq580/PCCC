@@ -28,7 +28,7 @@ export default class Profile extends Component{
     }
 
     render (){
-        // const {navigate} = this.props.navigation;
+        const {navigate} = this.props.navigation;
         return(
             <View style = {{flex:1}}>
                 <ImageBackground style = {styles.picture} source = {images.infoprofile}>
@@ -39,7 +39,7 @@ export default class Profile extends Component{
                 </ImageBackground>
                 <View style = {{flex:3}}>
                     <TouchableOpacity
-                        onPress = {()=> navigate('InfoProfile', {dataAccount: this.state.account})}
+                        onPress = {()=> navigate('ThongtinHD')}
                     >
                         <View style = {styles.infoContainer}>
                             <View style = {{alignItems:'center', justifyContent:'center', flex:1}}>
@@ -53,49 +53,65 @@ export default class Profile extends Component{
                         </View>
                     </TouchableOpacity>
                     <View style = {{height:1, backgroundColor:'#cccccc', marginTop:10}}/>
-                    <View style = {styles.infoContainer}>
-                        <View style = {{alignItems:'center', justifyContent:'center', flex:1}}>
-                            <Icon name="dropbox" size={20} style = {{marginLeft:5}}/>
-                        </View>
-                        <View style = {{flex:7, marginLeft:13}}>
-                            <Text>Thông tin KH</Text>
+                    <TouchableOpacity
+                        onPress = {()=> navigate('ThongtinKH')}
+                    >
+                        <View style = {styles.infoContainer}>
+                            <View style = {{alignItems:'center', justifyContent:'center', flex:1}}>
+                                <Icon name="dropbox" size={20} style = {{marginLeft:5}}/>
+                            </View>
+                            <View style = {{flex:7, marginLeft:13}}>
+                                <Text>Thông tin KH</Text>
+
+                            </View>
 
                         </View>
-
-                    </View>
+                    </TouchableOpacity>
                     <View style = {{height:1, backgroundColor:'#cccccc', marginTop:10}}/>
-                    <View style = {styles.infoContainer}>
-                        <View style = {{alignItems:'center', justifyContent:'center', flex:1}}>
-                            <Icon name="credit-card" size={20} style = {{marginLeft:5}}/>
-                        </View>
-                        <View style = {{flex:7, marginLeft:13}}>
-                            <Text>Danh sách thiết bị</Text>
+                    <TouchableOpacity
+                        onPress = {()=> navigate('DanhsachTB')}
+                    >
+                        <View style = {styles.infoContainer}>
+                            <View style = {{alignItems:'center', justifyContent:'center', flex:1}}>
+                                <Icon name="credit-card" size={20} style = {{marginLeft:5}}/>
+                            </View>
+                            <View style = {{flex:7, marginLeft:13}}>
+                                <Text>Danh sách thiết bị</Text>
+
+                            </View>
 
                         </View>
-
-                    </View>
+                    </TouchableOpacity>
                     <View style = {{height:1, backgroundColor:'#cccccc', marginTop:10}}/>
-                    <View style = {styles.infoContainer}>
-                        <View style = {{alignItems:'center', justifyContent:'center', flex:1}}>
-                            <Icon name="old-phone" size={20} style = {{marginLeft:5}}/>
-                        </View>
-                        <View style = {{flex:7, marginLeft:13}}>
-                            <Text>Hotline PCCC</Text>
+                    <TouchableOpacity
+                        onPress = {()=> navigate('HotlinePCCC')}
+                    >
+                        <View style = {styles.infoContainer}>
+                            <View style = {{alignItems:'center', justifyContent:'center', flex:1}}>
+                                <Icon name="old-phone" size={20} style = {{marginLeft:5}}/>
+                            </View>
+                            <View style = {{flex:7, marginLeft:13}}>
+                                <Text>Hotline PCCC</Text>
+
+                            </View>
 
                         </View>
-
-                    </View>
+                    </TouchableOpacity>
                     <View style = {{height:1, backgroundColor:'#cccccc', marginTop:10}}/>
-                    <View style = {styles.infoContainer}>
-                        <View style = {{alignItems:'center', justifyContent:'center', flex:1}}>
-                            <Icon name="star" size={20} style = {{marginLeft:5}}/>
-                        </View>
-                        <View style = {{flex:7, marginLeft:13}}>
-                            <Text>Thông tin công ty Digitime</Text>
+                    <TouchableOpacity
+                        onPress = {()=> navigate('ThongtinCtyDigitime')}
+                    >
+                        <View style = {styles.infoContainer}>
+                            <View style = {{alignItems:'center', justifyContent:'center', flex:1}}>
+                                <Icon name="star" size={20} style = {{marginLeft:5}}/>
+                            </View>
+                            <View style = {{flex:7, marginLeft:13}}>
+                                <Text>Thông tin công ty Digitime</Text>
+
+                            </View>
 
                         </View>
-
-                    </View>
+                    </TouchableOpacity>
 
                 </View>
             </View>

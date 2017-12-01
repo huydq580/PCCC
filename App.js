@@ -11,12 +11,12 @@ import {
   Text,
   View
 } from 'react-native';
-import SideMenu from './src/router/Navigation'
+import Tab from './src/router/Navigation'
 
 export default class App extends Component<{}> {
   render() {
     return (
-        <SideMenu/>
+        <Tab/>
     );
   }
 }
