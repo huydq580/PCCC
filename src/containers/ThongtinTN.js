@@ -2,41 +2,37 @@ import React, {Component} from 'react';
 import {
     View,
     Text,
-    StyleSheet, 
+    TouchableOpacity,
     FlatList,
-    TouchableOpacity
+    StyleSheet,
 } from 'react-native';
 
-export default class LichsuDC extends Component {
+export default class ThongtinTN extends Component {
     constructor(props){
         super(props)
         this.state = {
-            dataDC :['']
+            dataTN: ['']
         }
-    }
+    }   
     componentWillMount () {
         this.setState({
-            dataDC :
+            dataTN :
             [
                 {
-                    "ngaydongcuoc":"09/09/2017",
-                    "thoigiandongcuoc":"6",
-                    'ngayhethan':'09/09/2018'
+                    "tentoanha":"Kim Hoàn",
+                    "diachi":"19 Duy Tân, Cầu Giấy, Hà Nội"
                 },
                 {
-                    "ngaydongcuoc":"09/09/2017",
-                    "thoigiandongcuoc":"6",
-                    'ngayhethan':'09/09/2018'
+                    "tentoanha":"CMC Tower",
+                    "diachi":"102 Duy Tân, Cầu Giấy, Hà Nội"
                 },
                 {
-                    "ngaydongcuoc":"09/09/2017",
-                    "thoigiandongcuoc":"6",
-                    'ngayhethan':'09/09/2018'
+                    "tentoanha":"FPT",
+                    "diachi":"33 Trần Thái Tông, Cầu Giấy, Hà Nội"
                 },
                 {
-                    "ngaydongcuoc":"09/09/2017",
-                    "thoigiandongcuoc":"6",
-                    'ngayhethan':'09/09/2018'
+                    "tentoanha":"Misa",
+                    "diachi":"99 Liễu Giai, Ba Đình, Hà Nội"
                 },
             ],
         })
@@ -52,27 +48,22 @@ export default class LichsuDC extends Component {
           />
         );
       };
-
-      render (){
+    render (){
         const { navigate } = this.props.navigation;
         return (
             <View style = {{flex:1}}>
                 <FlatList
-                    data = {this.state.dataDC}
+                    data = {this.state.dataTN}
                     renderItem = {({item}) =>
                         <TouchableOpacity onPress = {()=> navigate('ChitietTN')}>
                             <View style = {styles.container}>
                                 <View style = {{flexDirection:'row'}}>
-                                    <Text style = {{fontWeight:'bold', fontSize: 18}}>Ngày đóng cước:  </Text>
-                                    <Text style = {{fontSize: 18}} >{item.ngaydongcuoc}</Text>   
+                                    <Text style = {{fontWeight:'bold', fontSize: 18}}>Tên toà nhà: </Text>
+                                    <Text style = {{fontSize: 18}} >{item.tentoanha}</Text>   
                                 </View>
                                 <View style = {{flexDirection:'row', marginTop:5}}>
-                                    <Text style = {{fontWeight:'bold',  fontSize: 18}}>Thời gian đóng cước (tháng): </Text>
-                                    <Text style = {{fontSize: 18}}>{item.thoigiandongcuoc}</Text>
-                                </View>
-                                <View style = {{flexDirection:'row', marginTop:5}}>
-                                    <Text style = {{fontWeight:'bold',  fontSize: 18}}>Ngày hết hạn cước: </Text>
-                                    <Text style = {{fontSize: 18}}>{item.ngayhethan}</Text>
+                                    <Text style = {{fontWeight:'bold',  fontSize: 18}}>Địa chỉ: </Text>
+                                    <Text style = {{fontSize: 18}}>{item.diachi}</Text>
                                 </View>
                             </View>
                             

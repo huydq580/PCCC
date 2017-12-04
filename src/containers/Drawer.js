@@ -39,14 +39,14 @@ export default class Profile extends Component{
                 </ImageBackground>
                 <View style = {{flex:3}}>
                     <TouchableOpacity
-                        onPress = {()=> navigate('ThongtinHD')}
+                        onPress = {()=> navigate('ThongtinKH')}
                     >
                         <View style = {styles.infoContainer}>
                             <View style = {{alignItems:'center', justifyContent:'center', flex:1}}>
                                 <IconFontAwesome name="user-circle" size={20} style = {{marginLeft:5}}/>
                             </View>
                             <View style = {{flex:7, marginLeft:13}}>
-                                <Text>Thông tin HĐ</Text>
+                                <Text>Thông tin Khách hàng</Text>
 
                             </View>
 
@@ -54,14 +54,29 @@ export default class Profile extends Component{
                     </TouchableOpacity>
                     <View style = {{height:1, backgroundColor:'#cccccc', marginTop:10}}/>
                     <TouchableOpacity
-                        onPress = {()=> navigate('ThongtinKH')}
+                        onPress = {()=> navigate('ThongtinTN')}
                     >
                         <View style = {styles.infoContainer}>
                             <View style = {{alignItems:'center', justifyContent:'center', flex:1}}>
                                 <Icon name="dropbox" size={20} style = {{marginLeft:5}}/>
                             </View>
                             <View style = {{flex:7, marginLeft:13}}>
-                                <Text>Thông tin KH</Text>
+                                <Text>Thông tin toà nhà</Text>
+
+                            </View>
+
+                        </View>
+                    </TouchableOpacity>
+                    <View style = {{height:1, backgroundColor:'#cccccc', marginTop:10}}/>
+                    <TouchableOpacity
+                        onPress = {()=> navigate('ThongtinHD')}
+                    >
+                        <View style = {styles.infoContainer}>
+                            <View style = {{alignItems:'center', justifyContent:'center', flex:1}}>
+                                <Icon name="credit-card" size={20} style = {{marginLeft:5}}/>
+                            </View>
+                            <View style = {{flex:7, marginLeft:13}}>
+                                <Text>Thông tin Hợp đồng </Text>
 
                             </View>
 
@@ -76,7 +91,7 @@ export default class Profile extends Component{
                                 <Icon name="credit-card" size={20} style = {{marginLeft:5}}/>
                             </View>
                             <View style = {{flex:7, marginLeft:13}}>
-                                <Text>Danh sách thiết bị</Text>
+                                <Text>Danh sách thiết bị </Text>
 
                             </View>
 

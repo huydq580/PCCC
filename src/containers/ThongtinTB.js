@@ -4,12 +4,12 @@ import {
     Text,
 } from 'react-native';
 
-export default class DanhmucTBcuaHD extends Component {
+export default class ThongtinTB extends Component {
 
     render (){
         return (
             <View>
-                <Text>Danh muc thiet bi cua HD</Text>
+                <Text>Thong tin TB</Text>
             </View>
         )
     }

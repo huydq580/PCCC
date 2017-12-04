@@ -7,35 +7,35 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-export default class LichsuDC extends Component {
+export default class LichsugiahanHD extends Component {
     constructor(props){
         super(props)
         this.state = {
-            dataDC :['']
+            dataLSHD :['']
         }
     }
     componentWillMount () {
         this.setState({
-            dataDC :
+            dataTN :
             [
                 {
-                    "ngaydongcuoc":"09/09/2017",
-                    "thoigiandongcuoc":"6",
+                    "ngaykihd":"09/09/2017",
+                    "thoigiangh":"12",
                     'ngayhethan':'09/09/2018'
                 },
                 {
-                    "ngaydongcuoc":"09/09/2017",
-                    "thoigiandongcuoc":"6",
+                    "ngaykihd":"09/09/2017",
+                    "thoigiangh":"12",
                     'ngayhethan':'09/09/2018'
                 },
                 {
-                    "ngaydongcuoc":"09/09/2017",
-                    "thoigiandongcuoc":"6",
+                    "ngaykihd":"09/09/2017",
+                    "thoigiangh":"12",
                     'ngayhethan':'09/09/2018'
                 },
                 {
-                    "ngaydongcuoc":"09/09/2017",
-                    "thoigiandongcuoc":"6",
+                    "ngaykihd":"09/09/2017",
+                    "thoigiangh":"12",
                     'ngayhethan':'09/09/2018'
                 },
             ],
@@ -58,20 +58,20 @@ export default class LichsuDC extends Component {
         return (
             <View style = {{flex:1}}>
                 <FlatList
-                    data = {this.state.dataDC}
+                    data = {this.state.dataTN}
                     renderItem = {({item}) =>
                         <TouchableOpacity onPress = {()=> navigate('ChitietTN')}>
                             <View style = {styles.container}>
                                 <View style = {{flexDirection:'row'}}>
-                                    <Text style = {{fontWeight:'bold', fontSize: 18}}>Ngày đóng cước:  </Text>
-                                    <Text style = {{fontSize: 18}} >{item.ngaydongcuoc}</Text>   
+                                    <Text style = {{fontWeight:'bold', fontSize: 18}}>Ngày kí HĐ:  </Text>
+                                    <Text style = {{fontSize: 18}} >{item.ngaykihd}</Text>   
                                 </View>
                                 <View style = {{flexDirection:'row', marginTop:5}}>
-                                    <Text style = {{fontWeight:'bold',  fontSize: 18}}>Thời gian đóng cước (tháng): </Text>
-                                    <Text style = {{fontSize: 18}}>{item.thoigiandongcuoc}</Text>
+                                    <Text style = {{fontWeight:'bold',  fontSize: 18}}>Thời gian gia hạn HĐ (tháng): </Text>
+                                    <Text style = {{fontSize: 18}}>{item.thoigiangh}</Text>
                                 </View>
                                 <View style = {{flexDirection:'row', marginTop:5}}>
-                                    <Text style = {{fontWeight:'bold',  fontSize: 18}}>Ngày hết hạn cước: </Text>
+                                    <Text style = {{fontWeight:'bold',  fontSize: 18}}>Ngày hết hạn HĐ: </Text>
                                     <Text style = {{fontSize: 18}}>{item.ngayhethan}</Text>
                                 </View>
                             </View>
