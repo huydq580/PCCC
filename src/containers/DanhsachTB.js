@@ -6,44 +6,88 @@ import {
     FlatList,
     StyleSheet,
 } from 'react-native';
-
 export default class DanhsachTB extends Component {
     constructor(props){
         super(props)
         this.state = {
-            dataTB :[
-                {}
-            ],
+            dataTB :[''],
         }
     }   
+    componentWillMount () {
+        this.setState({
+            dataTB :
+            [
+                {
+                    "mathietbi":"97347234238",
+                    "tentoanha":"Kim Hoàn",
+                    'hopdong':'HD-1202-09092017',
+                    'diadiemtrienkhai':'Số 678, đường Láng Đống Đa, Hà Nội',
+                    'trangthai':'Bình thường',
+                },
+                {
+                    "mathietbi":"97347234238",
+                    "tentoanha":"Kim Hoàn",
+                    'hopdong':'HD-1202-09092017',
+                    'diadiemtrienkhai':'Số 678, đường Láng Đống Đa, Hà Nội',
+                    'trangthai':'Bình thường',
+                },
+                {
+                    "mathietbi":"97347234238",
+                    "tentoanha":"Kim Hoàn",
+                    'hopdong':'HD-1202-09092017',
+                    'diadiemtrienkhai':'Số 678, đường Láng Đống Đa, Hà Nội',
+                    'trangthai':'Bình thường',
+                },
+                {
+                    "mathietbi":"97347234238",
+                    "tentoanha":"Kim Hoàn",
+                    'hopdong':'HD-1202-09092017',
+                    'diadiemtrienkhai':'Số 678, đường Láng Đống Đa, Hà Nội',
+                    'trangthai':'Bình thường',
+                },
+                
+            ],
+        })
+    }
+    renderSeparator = () => {
+        return (
+          <View
+            style={{
+              height: 1,
+              backgroundColor: "#CED0CE",
+                marginTop: 10,
+            }}
+          />
+        );
+      };
     render (){
         const {navigate} = this.props.navigation;
         return (
-            <View style = {{flex:1}}>
+            <View style = {{flex:1, backgroundColor: 'white'}}>
                 <FlatList
                     data = {this.state.dataTB}
-                    renderItem = {(item) =>
+                    renderItem = {({item}) =>
                         <TouchableOpacity onPress = {()=> navigate('ThongtinTB')}>
                             <View style = {styles.container}>
-                                <View style = {{flexDirection: 'row'}}>
-                                    <Text style = {{fontWeight:'bold'}}>Mã thiết bị: </Text>
-                                    <Text>97347234238</Text>   
+                                <View style = {styles.itemView}>
+                                    <Text style = {styles.textL}>Mã thiết bị: </Text>
+                                    <Text>{item.mathietbi}</Text>   
                                 </View>
-                                <View style = {{flexDirection: 'row', marginTop:4}}>
-                                    <Text style = {{fontWeight:'bold'}}>Tên tòa nhà: </Text>
-                                    <Text>Kim Hoàn</Text>
+                                <View style = {styles.itemView}>
+                                    <Text style = {styles.textL}>Tên tòa nhà: </Text>
+                                    <Text>{item.tentoanha}</Text>
                                 </View>
-                                <View style = {{flexDirection: 'row', marginTop:4}}>
-                                    <Text style = {{fontWeight:'bold'}}>Hợp đồng: </Text>
-                                    <Text>HD-1202-09092017</Text>   
+                                <View style = {styles.itemView}>
+                                    <Text style = {styles.textL}>Hợp đồng: </Text>
+                                    <Text>{item.hopdong}</Text>   
                                 </View>
-                                <View style = {{flexDirection: 'row', marginTop:4}}>
-                                    <Text style = {{fontWeight:'bold'}}>Địa điểm triển khai: </Text>
-                                    <Text style = {{color: "#1565C0"}}>Số 678, đường Láng Đống Đa, Hà Nội</Text>   
+                                <View style = {styles.itemView}>
+                                    <Text style = {styles.textL}>Địa điểm triển khai: </Text>
+                                    <Text>{item.diadiemtrienkhai}</Text>   
                                 </View>
-                                <View style = {{flexDirection: 'row', marginTop:4}}>
-                                    <Text style = {{fontWeight:'bold'}}>Trạng thái: </Text>
-                                    <Text style = {{color: "#1565C0"}}>Bình thường</Text>   
+                                <View style = {styles.itemView}>
+                                    <Text style = {styles.textL}>Trạng thái: </Text>
+                                    <Text style = {{color: "#00E676"}}>{item.trangthai}</Text>   
                                 </View>
                             </View>
                             
@@ -51,6 +95,7 @@ export default class DanhsachTB extends Component {
                         
                     }
                     keyExtractor={(item, index) => index}
+                    ItemSeparatorComponent = {this.renderSeparator}
                     />
             </View>
         )
@@ -58,11 +103,13 @@ export default class DanhsachTB extends Component {
 }
 const styles = StyleSheet.create({
     container: {
-        height:125,
-        marginBottom:15,
-        marginLeft: 10,
-        marginTop:15, 
-        borderBottomWidth: 1,
-        borderBottomColor:'#BDBDBD'
-    }
+        marginLeft:10,
+        marginTop:10, 
+    },
+    itemView: {
+        flexDirection: 'row', 
+    },
+    textL: {
+        fontWeight:'bold'
+    },
 })

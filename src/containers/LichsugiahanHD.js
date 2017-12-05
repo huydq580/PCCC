@@ -16,7 +16,7 @@ export default class LichsugiahanHD extends Component {
     }
     componentWillMount () {
         this.setState({
-            dataTN :
+            dataLSHD :
             [
                 {
                     "ngaykihd":"09/09/2017",
@@ -56,27 +56,25 @@ export default class LichsugiahanHD extends Component {
       render (){
         const { navigate } = this.props.navigation;
         return (
-            <View style = {{flex:1}}>
+            <View style = {{flex:1, backgroundColor: 'white'}}>
                 <FlatList
-                    data = {this.state.dataTN}
+                    data = {this.state.dataLSHD}
                     renderItem = {({item}) =>
-                        <TouchableOpacity onPress = {()=> navigate('ChitietTN')}>
                             <View style = {styles.container}>
                                 <View style = {{flexDirection:'row'}}>
-                                    <Text style = {{fontWeight:'bold', fontSize: 18}}>Ngày kí HĐ:  </Text>
-                                    <Text style = {{fontSize: 18}} >{item.ngaykihd}</Text>   
+                                    <Text style = {styles.textL}>Ngày kí HĐ:  </Text>
+                                    <Text>{item.ngaykihd}</Text>   
                                 </View>
                                 <View style = {{flexDirection:'row', marginTop:5}}>
-                                    <Text style = {{fontWeight:'bold',  fontSize: 18}}>Thời gian gia hạn HĐ (tháng): </Text>
-                                    <Text style = {{fontSize: 18}}>{item.thoigiangh}</Text>
+                                    <Text style = {styles.textL}>Thời gian gia hạn HĐ (tháng): </Text>
+                                    <Text>{item.thoigiangh}</Text>
                                 </View>
                                 <View style = {{flexDirection:'row', marginTop:5}}>
-                                    <Text style = {{fontWeight:'bold',  fontSize: 18}}>Ngày hết hạn HĐ: </Text>
-                                    <Text style = {{fontSize: 18}}>{item.ngayhethan}</Text>
+                                    <Text style = {styles.textL}>Ngày hết hạn HĐ: </Text>
+                                    <Text>{item.ngayhethan}</Text>
                                 </View>
                             </View>
                             
-                        </TouchableOpacity>
                         
                     }
                     keyExtractor={(item, index) => index}
@@ -93,5 +91,11 @@ const styles = StyleSheet.create({
     container: {
         marginLeft:10,
         marginTop:10, 
-    }
+    },
+    itemView: {
+        flexDirection: 'row', 
+    },
+    textL: {
+        fontWeight:'bold'
+    },
 })

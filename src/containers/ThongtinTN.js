@@ -51,19 +51,19 @@ export default class ThongtinTN extends Component {
     render (){
         const { navigate } = this.props.navigation;
         return (
-            <View style = {{flex:1}}>
+            <View style = {{flex:1, backgroundColor: 'white'}}>
                 <FlatList
                     data = {this.state.dataTN}
                     renderItem = {({item}) =>
                         <TouchableOpacity onPress = {()=> navigate('ChitietTN')}>
                             <View style = {styles.container}>
-                                <View style = {{flexDirection:'row'}}>
-                                    <Text style = {{fontWeight:'bold', fontSize: 18}}>Tên toà nhà: </Text>
-                                    <Text style = {{fontSize: 18}} >{item.tentoanha}</Text>   
+                                <View style = {styles.itemView}>
+                                    <Text style = {styles.textL}>Tên toà nhà: </Text>
+                                    <Text>{item.tentoanha}</Text>   
                                 </View>
                                 <View style = {{flexDirection:'row', marginTop:5}}>
-                                    <Text style = {{fontWeight:'bold',  fontSize: 18}}>Địa chỉ: </Text>
-                                    <Text style = {{fontSize: 18}}>{item.diachi}</Text>
+                                    <Text style = {styles.textL}>Địa chỉ: </Text>
+                                    <Text>{item.diachi}</Text>
                                 </View>
                             </View>
                             
@@ -84,5 +84,11 @@ const styles = StyleSheet.create({
     container: {
         marginLeft:10,
         marginTop:10, 
-    }
+    },
+    itemView: {
+        flexDirection: 'row', 
+    },
+    textL: {
+        fontWeight:'bold'
+    },
 })

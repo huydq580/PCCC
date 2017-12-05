@@ -65,31 +65,31 @@ export default class ThongtinHD extends Component {
     render (){
         const {navigate} = this.props.navigation;
         return (
-            <View style = {{flex:1}}>
+            <View style = {{flex:1, backgroundColor: 'white'}}>
                 <FlatList
                     data = {this.state.dataHD}
                     renderItem = {({item}) =>
                         <TouchableOpacity onPress = {()=> navigate('Tab')}>
                             <View style = {styles.container}>
                                 <View style = {{flexDirection: 'row'}}>
-                                    <Text style = {{fontWeight:'bold', fontSize: 18}}>Mã hợp đồng: </Text>
-                                    <Text style = {{fontSize: 18}} >{item.mahopdong}</Text>   
+                                    <Text style = {styles.textL}>Mã hợp đồng: </Text>
+                                    <Text>{item.mahopdong}</Text>   
                                 </View>
                                 <View style = {{flexDirection: 'row', marginTop:4}}>
-                                    <Text style = {{fontWeight:'bold', fontSize: 18}}>Ngày kí HĐ: </Text>
-                                    <Text style = {{fontSize: 18}} >{item.ngaykihopdong}</Text>
+                                    <Text style = {styles.textL}>Ngày kí HĐ: </Text>
+                                    <Text>{item.ngaykihopdong}</Text>
                                 </View>
                                 <View style = {{flexDirection: 'row', marginTop:4}}>
-                                    <Text style = {{fontWeight:'bold', fontSize: 18}}>Địa điểm triển khai: </Text>
-                                    <Text style = {{fontSize: 18}} >{item.diadiemtrienkhai}</Text>   
+                                    <Text style = {styles.textL}>Địa điểm triển khai: </Text>
+                                    <Text>{item.diadiemtrienkhai}</Text>   
                                 </View>
                                 <View style = {{flexDirection: 'row', marginTop:4}}>
-                                    <Text style = {{fontWeight:'bold', fontSize: 18}}>Trạng thái HĐ: </Text>
-                                    <Text style = {{fontSize: 18,color: "#1565C0"}}>{item.trangthaihoatdong}</Text>   
+                                    <Text style = {styles.textL}>Trạng thái HĐ: </Text>
+                                    <Text style = {{ color: "#1976D2"}}>{item.trangthaihoatdong}</Text>   
                                 </View>
                                 <View style = {{flexDirection: 'row', marginTop:4}}>
-                                    <Text style = {{fontWeight:'bold', fontSize: 18}}>Trạng thái cước: </Text>
-                                    <Text style = {{fontSize: 18,color: "#1565C0"}}>{item.trangthaicuoc}</Text>   
+                                    <Text style = {styles.textL}>Trạng thái cước: </Text>
+                                    <Text style = {{ color: "#1976D2"}}>{item.trangthaicuoc}</Text>   
                                 </View>
                             </View>
                             
@@ -107,5 +107,11 @@ const styles = StyleSheet.create({
     container: {
         marginLeft:10,
         marginTop:10, 
-    }
+    },
+    itemView: {
+        flexDirection: 'row', 
+    },
+    textL: {
+        fontWeight:'bold'
+    },
 })

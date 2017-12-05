@@ -10,6 +10,7 @@ const images = {
     // logo1: require('../images/logo1.png'),
     arrow: require('../images/arrow.png'),
     start: require('../images/start.png'),
-    delete: require('../images/delete.png')
+    delete: require('../images/delete.png'),
+    digitime: require('../images/digitime.png')
 }
 export default images;

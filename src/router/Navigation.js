@@ -22,13 +22,11 @@ const Tab = TabNavigator ({
         screen: ChitietHD,
         navigationOptions: {
 
-            tabBarLabel: 'Chi tiết HĐ',
-            headerTitle: {
-                title: 'Chi tiết HĐ',
-            },
-            tabBarIcon: ({tintColor}) =>
-                <Icon1 name="format-list-bulleted" size={20}
-                      style={{ color: tintColor }}/>
+            title: 'Chi tiết hợp đồng',
+            tabBarLabel: 'Chi tiết hợp đồng',
+            // tabBarIcon: ({tintColor}) =>
+            //     <Icon1 name="format-list-bulleted" size={20}
+            //           style={{ color: tintColor }}/>
         }
     },
     ThongtinTB: {
@@ -36,9 +34,9 @@ const Tab = TabNavigator ({
         navigationOptions: {
             title: 'Thông tin thiết bị',
             tabBarLabel: 'Thông tin thiết bị',
-            tabBarIcon: ({tintColor}) =>
-                <Icon1 name="format-list-bulleted" size={20}
-                      style={{ color: tintColor }}/>
+            // tabBarIcon: ({tintColor}) =>
+            //     <Icon1 name="format-list-bulleted" size={20}
+            //           style={{ color: tintColor }}/>
         }
     },
     LichsugiahanHD: {
@@ -46,9 +44,9 @@ const Tab = TabNavigator ({
         navigationOptions: {
             title: 'Lịch sử gia hạn HĐ',
             tabBarLabel: 'Lịch sử gia hạn HĐ',
-            tabBarIcon: ({tintColor}) =>
-                <Icon1 name="format-list-bulleted" size={20}
-                      style={{ color: tintColor }}/>
+            // tabBarIcon: ({tintColor}) =>
+            //     <Icon1 name="format-list-bulleted" size={20}
+            //           style={{ color: tintColor }}/>
         }
     },
     LichsuDC: {
@@ -56,9 +54,9 @@ const Tab = TabNavigator ({
         navigationOptions: {
             title: 'Lịch sử đóng cước',
             tabBarLabel: 'Lịch sử đóng cước',
-            tabBarIcon: ({tintColor}) =>
-                <Icon1 name="format-list-bulleted" size={20}
-                      style={{ color: tintColor }}/>
+            // tabBarIcon: ({tintColor}) =>
+            //     <Icon1 name="format-list-bulleted" size={20}
+            //           style={{ color: tintColor }}/>
         }
     }
 
@@ -66,21 +64,14 @@ const Tab = TabNavigator ({
 
 },
     {
+       
         tabBarPosition: 'bottom',
+        
         tabBarOptions: {
-            showIcon: true,
-            style: {
-                margin: 0,
-                padding: 0,
-                backgroundColor: 'white',
-            },
-            labelStyle: {
-                margin: 0,
-                padding: 0,
-                fontSize: 10,
-            },
-            activeTintColor: 'blue',
-            inactiveTintColor: 'black',
+            tabStyle: {margin: 0, padding: 0, height: 60},
+            // showIcon: true,
+            style: {height: 60, padding:0, margin:0},
+        
             upperCaseLabel: false, //chu thuong
             pressOpacity: 0.1
         },
@@ -103,9 +94,6 @@ const HomeStack = StackNavigator ({
         }
 
     },
-    // Drawer: {
-    //     screen: Drawer
-    // }
 })
 const SideMenu = DrawerNavigator ({
     Home: {

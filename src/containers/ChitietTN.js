@@ -16,7 +16,7 @@ export default class ChitietTN extends Component {
    
     render (){
         return (
-            <View>
+            <View style = {{flex:1, backgroundColor: 'white'}}>
                 <View style = {{flexDirection: 'row'}}>
                     <Text>Tên tòa nhà: </Text>
                     <Text>Kim Hoàn</Text>

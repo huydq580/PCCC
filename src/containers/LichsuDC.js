@@ -56,27 +56,25 @@ export default class LichsuDC extends Component {
       render (){
         const { navigate } = this.props.navigation;
         return (
-            <View style = {{flex:1}}>
+            <View style = {{flex:1, backgroundColor: 'white'}}>
                 <FlatList
                     data = {this.state.dataDC}
                     renderItem = {({item}) =>
-                        <TouchableOpacity onPress = {()=> navigate('ChitietTN')}>
                             <View style = {styles.container}>
                                 <View style = {{flexDirection:'row'}}>
-                                    <Text style = {{fontWeight:'bold', fontSize: 18}}>Ngày đóng cước:  </Text>
-                                    <Text style = {{fontSize: 18}} >{item.ngaydongcuoc}</Text>   
+                                    <Text style = {styles.textL}>Ngày đóng cước:  </Text>
+                                    <Text>{item.ngaydongcuoc}</Text>   
                                 </View>
                                 <View style = {{flexDirection:'row', marginTop:5}}>
-                                    <Text style = {{fontWeight:'bold',  fontSize: 18}}>Thời gian đóng cước (tháng): </Text>
-                                    <Text style = {{fontSize: 18}}>{item.thoigiandongcuoc}</Text>
+                                    <Text style = {styles.textL}>Thời gian đóng cước (tháng): </Text>
+                                    <Text>{item.thoigiandongcuoc}</Text>
                                 </View>
                                 <View style = {{flexDirection:'row', marginTop:5}}>
-                                    <Text style = {{fontWeight:'bold',  fontSize: 18}}>Ngày hết hạn cước: </Text>
-                                    <Text style = {{fontSize: 18}}>{item.ngayhethan}</Text>
+                                    <Text style = {styles.textL}>Ngày hết hạn cước: </Text>
+                                    <Text>{item.ngayhethan}</Text>
                                 </View>
                             </View>
-                            
-                        </TouchableOpacity>
+                    
                         
                     }
                     keyExtractor={(item, index) => index}
@@ -93,5 +91,11 @@ const styles = StyleSheet.create({
     container: {
         marginLeft:10,
         marginTop:10, 
-    }
+    },
+    itemView: {
+        flexDirection: 'row', 
+    },
+    textL: {
+        fontWeight:'bold'
+    },
 })

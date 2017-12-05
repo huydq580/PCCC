@@ -16,41 +16,75 @@ export default class HotlinePCCC extends Component {
                 {}
             ],
         }
-    }   
+    }  
+    componentWillMount () {
+        this.setState({
+            dataHotline :
+            [
+                {
+                    "mathietbi":"97347234238",
+                    'diadiemtrienkhai':'Số 678, đường Láng Đống Đa, Hà Nội',
+                    'hotlinekhuvuc':'04.123123123',
+                },
+                {
+                    "mathietbi":"97347234238",
+                    'diadiemtrienkhai':'Số 678, đường Láng Đống Đa, Hà Nội',
+                    'hotlinekhuvuc':'04.123123123',
+                },
+                {
+                    "mathietbi":"97347234238",
+                    'diadiemtrienkhai':'Số 678, đường Láng Đống Đa, Hà Nội',
+                    'hotlinekhuvuc':'04.123123123',
+                },
+                
+            ],
+        })
+    }
+    renderSeparator = () => {
+        return (
+          <View
+            style={{
+              height: 1,
+              backgroundColor: "#CED0CE",
+                marginTop: 10,
+            }}
+          />
+        );
+      }; 
     onpress() {
         alert('chua set nut goi')
     }
     render (){
         const {navigate} = this.props.navigation;
         return (
-            <View style = {{flex:1}}>
+            <View style = {{flex:1, backgroundColor: 'white'}}>
                 <FlatList
                     data = {this.state.dataHotline}
-                    renderItem = {(item) =>
-                        <TouchableOpacity onPress = {()=> navigate('ThongtinTB')}>
-                            <View style = {styles.container}>
-                                <View style = {{flexDirection: 'row'}}>
-                                    <Text style = {{fontWeight:'bold'}}>Mã thiết bị: </Text>
-                                    <Text>97347234238</Text>   
-                                </View>
-                                
-                                <View style = {{flexDirection: 'row', marginTop:4}}>
-                                    <Text style = {{fontWeight:'bold'}}>Địa điểm triển khai: </Text>
-                                    <Text style = {{color: "#1565C0"}}>Số 678, đường Láng Đống Đa, Hà Nội</Text>   
-                                </View>
-                                <View style = {{flexDirection: 'row', marginTop:4}}>
-                                    <Text style = {{fontWeight:'bold'}}>Hotline PCCC khu vực: 04.123.123.123 </Text>
-                                    <Button onPress = {this.onpress}
-                                            title="Gọi"
-                                            color="#00ff5e"
-                                        />   
-                                </View>
+                    renderItem = {({item}) =>
+                        <View style = {styles.container}>
+                            <View style = {styles.itemView}>
+                                <Text style = {styles.textL}>Mã thiết bị: </Text>
+                                <Text>{item.mathietbi}</Text>   
                             </View>
                             
-                        </TouchableOpacity>
-                        
+                            <View  style = {styles.itemView}>
+                                <Text style = {styles.textL}>Địa điểm triển khai: </Text>
+                                <Text>{item.diadiemtrienkhai}</Text>   
+                            </View>
+                            <View style = {styles.itemView}>
+                                <Text style = {styles.textL}>Hotline PCCC khu vực:</Text>
+                                <Text style = {styles.textL}>{item.hotlinekhuvuc} </Text>
+                                <TouchableOpacity>
+                                    <View style = {{height:20, width:35, backgroundColor:'#4FC3F7', justifyContent: 'center',alignItems: 'center',}}>
+                                        <Text>Gọi</Text>
+                                    </View>
+                                </TouchableOpacity>
+                                
+                            </View>
+                        </View>
                     }
                     keyExtractor={(item, index) => index}
+                    ItemSeparatorComponent = {this.renderSeparator}
                     />
             </View>
         )
@@ -58,11 +92,15 @@ export default class HotlinePCCC extends Component {
 }
 const styles = StyleSheet.create({
     container: {
-        height:80,
-        marginBottom:15,
-        marginLeft: 10,
-        marginTop:15, 
-        borderBottomWidth: 1,
-        borderBottomColor:'#BDBDBD'
-    }
+        marginLeft:10,
+        marginTop:10, 
+    },
+    itemView: {
+        flexDirection: 'row', 
+        marginTop: 5,
+    },
+    textL: {
+        fontWeight:'bold',
+        
+    },
 })

@@ -9,7 +9,7 @@ export default class ChitietHD extends Component {
 
     render (){
         return (
-            <View>
+            <View style = {{flex:1, backgroundColor: 'white'}}>
                 <View style = {{flexDirection:'row'}}>
                     <Text style = {style.textL}>- Mã HĐ: </Text>
                     <Text style = {style.textR}>HD-1202-09092017</Text>
@@ -54,11 +54,11 @@ const style = StyleSheet.create({
     textL: {
         marginTop: 20,
         marginLeft: 15,
-        fontSize: 18,
+        
         fontWeight:'bold'
     },
     textR: {
         marginTop: 20,
-        fontSize: 18,
+
     }
 })

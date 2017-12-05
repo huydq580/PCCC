@@ -12,8 +12,8 @@ export default class Logo extends Component {
     render () {
         return (
             <View style={styles.container}>
-                <Image source={images.logo1} style={styles.image}/>
-                <Text style={styles.text}>Logo App</Text>
+                <Image source={images.digitime} style={styles.image}/>
+                {/* <Text style={styles.text}>Digitime</Text> */}
             </View>
         );
     }
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     },
     image: {
         width:200,
-        height:30,
+        height:150,
         resizeMode:'stretch',
     },
     text: {
