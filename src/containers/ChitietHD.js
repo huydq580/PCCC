@@ -42,7 +42,7 @@ export default class ChitietHD extends Component {
                     <Text style = {style.textL}>- Ngày hết hạn gói cước: </Text>
                     <Text style = {style.textR}>09/11/2017</Text>
                 </View>
-                <View style = {{flexDirection:'row'}}>
+                <View style = {{flexDirection:'row',}}>
                     <Text style = {style.textL}>- Trạng thái cước: </Text>
                     <Text style = {style.textR}>Còn cước</Text>
                 </View>
