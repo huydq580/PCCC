@@ -14,6 +14,6 @@ export default class ThongtinCtyDigitime extends Component {
                 <Text style = {{marginTop: 15, marginLeft: 10, color: "#1976D2" }}>Email: safeone@digitime.vn</Text>
                 <Text style = {{marginTop: 15, marginLeft: 10, color: "#1976D2" }}>Www.digitime.vn</Text>
             </View>
-        )
+        );
     }
 }
