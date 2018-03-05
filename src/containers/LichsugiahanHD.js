@@ -52,35 +52,30 @@ export default class LichsugiahanHD extends Component {
           />
         );
       };
-
-      render (){
+        render (){
         const { navigate } = this.props.navigation;
         return (
             <View style = {{flex:1, backgroundColor: 'white'}}>
                 <FlatList
                     data = {this.state.dataLSHD}
                     renderItem = {({item}) =>
-                            <View style = {styles.container}>
-                                <View style = {{flexDirection:'row'}}>
-                                    <Text style = {styles.textL}>Ngày kí HĐ:  </Text>
-                                    <Text>{item.ngaykihd}</Text>   
-                                </View>
-                                <View style = {{flexDirection:'row', marginTop:5}}>
-                                    <Text style = {styles.textL}>Thời gian gia hạn HĐ (tháng): </Text>
-                                    <Text>{item.thoigiangh}</Text>
-                                </View>
-                                <View style = {{flexDirection:'row', marginTop:5}}>
-                                    <Text style = {styles.textL}>Ngày hết hạn HĐ: </Text>
-                                    <Text>{item.ngayhethan}</Text>
-                                </View>
+                        <View style = {styles.container}>
+                            <View style = {{flexDirection:'row'}}>
+                                <Text style = {styles.textL}>Ngày kí HĐ:  </Text>
+                                <Text>{item.ngaykihd}</Text>   
                             </View>
-                            
-                        
+                            <View style = {{flexDirection:'row', marginTop:5}}>
+                                <Text style = {styles.textL}>Thời gian gia hạn HĐ (tháng): </Text>
+                                <Text>{item.thoigiangh}</Text>
+                            </View>
+                            <View style = {{flexDirection:'row', marginTop:5}}>
+                                <Text style = {styles.textL}>Ngày hết hạn HĐ: </Text>
+                                <Text>{item.ngayhethan}</Text>
+                            </View>
+                        </View>    
                     }
                     keyExtractor={(item, index) => index}
                     ItemSeparatorComponent = {this.renderSeparator}
-                        
-            
                 />
                 
             </View>

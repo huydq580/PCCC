@@ -14,6 +14,7 @@ export default class ChitietTN extends Component {
         super(props)
         this.state = {
             edit: false,
+            underline : 'transparent',
             nameQuanli: 'Đinh Văn Thái',
             sdtToanha: '0963250395',
             nameDoitruong: 'Lê Công Vinh',
@@ -32,13 +33,13 @@ export default class ChitietTN extends Component {
             edit: true
         })
     }
-   
+    
     render (){
         return (
             <ScrollView style = {{flex:1, backgroundColor: 'white'}}>
                 <View style = {{flex:1, flexDirection: "row"}}>
                     
-                        <Text style = {{flex:5}}></Text>
+                        <Text style = {{flex:3}}></Text>
                         <TouchableOpacity onPress = {() => this.edittext()}>
                         <Text style = {{flex:1, color:"#0277BD"}}>Sửa</Text>
                     </TouchableOpacity>
@@ -56,16 +57,17 @@ export default class ChitietTN extends Component {
                         <Text style = {styles.textL}>Người quản lí tòa nhà: </Text>
                         <TextInput
                                 value = {this.state.nameQuanli}
-                                underlineColorAndroid='transparent'
+                                underlineColorAndroid={this.state.underline}
                                 editable={this.state.edit}
                                 selectTextOnFocus={false}
-                                style = {styles.textinput}/>
+                                style = {styles.textinput}
+                        />
                     </View>
                     <View style = {styles.viewcon}>
                         <Text style = {styles.textL}>Số điện thoại tòa nhà: </Text>
                         <TextInput
                                 value = {this.state.sdtToanha}
-                                underlineColorAndroid='transparent'
+                                underlineColorAndroid={this.state.underline}
                                 editable={false} 
                                 selectTextOnFocus={false}
                                 style = {styles.textinput}/>
@@ -74,7 +76,7 @@ export default class ChitietTN extends Component {
                         <Text style = {styles.textL}>Đội trưởng PCCC của tòa nhà: </Text>
                         <TextInput
                                 value = {this.state.nameDoitruong}
-                                underlineColorAndroid='transparent'
+                                underlineColorAndroid={this.state.underline}
                                 editable={false} 
                                 selectTextOnFocus={false}
                                 style = {styles.textinput}/>
@@ -83,7 +85,7 @@ export default class ChitietTN extends Component {
                         <Text style = {styles.textL}>Số điện thoại liên hệ: </Text>
                         <TextInput
                                 value = {this.state.sdtLienHe}
-                                underlineColorAndroid='transparent'
+                                underlineColorAndroid={this.state.underline}
                                 editable={false} 
                                 selectTextOnFocus={false}
                                 style = {styles.textinput}/>
@@ -92,7 +94,7 @@ export default class ChitietTN extends Component {
                         <Text style = {styles.textL}>Các hướng tiếp giáp: </Text>
                         <TextInput
                                 value = {this.state.cachuongtiepgiao}
-                                underlineColorAndroid='transparent'
+                                underlineColorAndroid={this.state.underline}
                                 editable={false} 
                                 selectTextOnFocus={false}
                                 style = {styles.textinput}/>
@@ -101,16 +103,16 @@ export default class ChitietTN extends Component {
                         <Text style = {styles.textL}>Giao thông bên trong và bên ngoài: </Text>
                         <TextInput
                                 value = {this.state.giaothongbentrongvangoai}
-                                underlineColorAndroid='transparent'
+                                underlineColorAndroid={this.state.underline}
                                 editable={false} 
                                 selectTextOnFocus={false}
                                 style = {styles.textinput}/>
                     </View>
                     <View style = {styles.viewcon}>
-                        <Text style = {styles.textL}>Nguồn nước: </Text>
+                        <Text style = { styles.textL}>Nguồn nước: </Text>
                         <TextInput
                                 value = {this.state.nguonnuoc}
-                                underlineColorAndroid='transparent'
+                                underlineColorAndroid={this.state.underline}
                                 editable={false} 
                                 selectTextOnFocus={false}
                                 style = {styles.textinput}/>
@@ -119,7 +121,7 @@ export default class ChitietTN extends Component {
                         <Text style = {styles.textL}>Lực lượng chữa cháy tại chỗ: </Text>
                         <TextInput
                                 value = {this.state.lucluongchuachay}
-                                underlineColorAndroid='transparent'
+                                underlineColorAndroid={this.state.underline}
                                 editable={false} 
                                 selectTextOnFocus={false}
                                 style = {styles.textinput}/>
@@ -129,7 +131,7 @@ export default class ChitietTN extends Component {
                         <Text style = {styles.textL}>Phương tiện tại chỗ: </Text>
                         <TextInput
                                 value = {this.state.phuongtientaicho}
-                                underlineColorAndroid='transparent'
+                                underlineColorAndroid={this.state.underline}
                                 editable={false} 
                                 selectTextOnFocus={false}
                                 style = {styles.textinput}/>
@@ -139,7 +141,7 @@ export default class ChitietTN extends Component {
                         <Text style = {styles.textL}>Đặc điểm kiến trúc: </Text>
                         <TextInput
                                 value = {this.state.diadiemkientruc}
-                                underlineColorAndroid='transparent'
+                                underlineColorAndroid={this.state.underline}
                                 editable={false} 
                                 selectTextOnFocus={false}
                                 style = {styles.textinput}/>
@@ -149,7 +151,7 @@ export default class ChitietTN extends Component {
                         <Text style = {styles.textL}>Tính chất nguy hiểm cháy, nổ, độc, hại: </Text>
                         <TextInput
                                 value = {this.state.tinhchatnguyhiem}
-                                underlineColorAndroid='transparent'
+                                underlineColorAndroid={this.state.underline}
                                 editable={false} 
                                 selectTextOnFocus={false}
                                 style = {styles.textinput}/>
@@ -168,13 +170,12 @@ const styles = StyleSheet.create({
         marginTop: 20,
     },
     textL: {
-        padding: 0,
         marginLeft: 15,
         
         fontWeight:'bold'
     },
     textinput: {
         color: "#757575",
-        padding: 0
+        padding: 0,
     }
 })

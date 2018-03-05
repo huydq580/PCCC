@@ -7,6 +7,8 @@ import {
     StyleSheet,
     Button,
 } from 'react-native';
+import Communications from 'react-native-communications';
+
 
 export default class HotlinePCCC extends Component {
     constructor(props){
@@ -74,7 +76,7 @@ export default class HotlinePCCC extends Component {
                             <View style = {styles.itemView}>
                                 <Text style = {styles.textL}>Hotline PCCC khu vực:</Text>
                                 <Text style = {styles.textL}>{item.hotlinekhuvuc} </Text>
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={() => Communications.phonecall('0983145317', true)}>
                                     <View style = {{height:20, width:35, backgroundColor:'#4FC3F7', justifyContent: 'center',alignItems: 'center',}}>
                                         <Text>Gọi</Text>
                                     </View>

@@ -18,8 +18,7 @@ import Logo from "../components/Login/Logo";
 import Form from "../components/Login/Form";
 import SignupSection from "../components/Login/SignupSection";
 import images from "../components/images";
-// import {URL, URL_LOGIN} from "../components/const";
-// import { NavigationActions } from 'react-navigation'
+import {URL, URL_LOGIN} from "../components/const";
 
 var {height, width} = Dimensions.get('window');
 height = height;
@@ -52,6 +51,27 @@ export default class Login extends Component {
             pass: pass
         })
     }
+    _Dangnhap(){
+        // fetch("http://pccc.safeone.vn/mobile-service/usersServiceRest/getCustomerUser/SAF_1408201117/123456aA@", {
+        //     method: 'GET',
+        //     headers: {
+        //         'Authorization': 'Basic YWRtaW46UGNjY0AxMTQ=',
+        //         'APP_CODE': 'MOBILE_234',
+        //         'Content-Type': 'application/json',
+        //         'Accept-Charset': 'UTF-8',
+        //         'RESET_TOKEN': '0'
+        //
+        //     },
+        //
+        // }).then((response) => response.json())
+        // .then((data)=> {
+        //     console.log('Data', data)
+        // }).catch((erro)=> {
+        //     console.log(erro);
+        // })
+        this.props.navigation.navigate('Home')
+    }
+
     render(){
         // const {navigate} = this.props.navigation;
         return(
@@ -64,7 +84,6 @@ export default class Login extends Component {
                     <View style={{height: this.state.height,position:'absolute'}}>
 
                         <ImageBackground style={styles.picture} source={images.wallpaper}>
-
                             <Logo/>
                             <Form
                                 getEmail={this.getEmail}
@@ -73,7 +92,7 @@ export default class Login extends Component {
                             <SignupSection/>
                             <View style={styles.container}>
                                 <TouchableOpacity style={styles.button}
-                                                  onPress = {this._onPress}
+                                                  onPress = {this._Dangnhap()}
                                 >
                                     <Text style={styles.text}>LOGIN</Text>
                                 </TouchableOpacity>
